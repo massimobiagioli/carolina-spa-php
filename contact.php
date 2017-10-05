@@ -18,20 +18,23 @@ include 'templates/navigation.php';
         <main class="col-12 col-md-10 offset-md-1 main-content">
             <h2 class="d-block d-md-none">Contact Us</h2>
             
-            <form action="send.php" method="post" class="p-5 mt-5 contact-form">
+            <form id="contact_form" action="send.php" method="post" class="p-5 mt-5 contact-form">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" name="name"
-                           placeholder="Your Name" required>
+                           placeholder="Your Name">
+                    <small class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
-                    <label for="name">Email</label>
+                    <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" name="email"
-                           placeholder="Your Email" required>
+                           placeholder="Your Email">
+                    <small class="form-text text-muted"></small>
                 </div>
                 <div class="form-group">
-                    <label for="name">Message</label>
+                    <label for="message">Message</label>
                     <textarea class="form-control" id="message" name="message" rows="6"></textarea>
+                    <small class="form-text text-muted"></small>
                 </div>
                 
                 <input type="submit" class="btn btn-primary text-uppercase" name="submit" value="Submit"> 
