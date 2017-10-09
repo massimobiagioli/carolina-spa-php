@@ -14,8 +14,8 @@ include 'templates/navigation.php';
 </div>
 
 <div class="container py-4">
-    <div class="row">
-        <main class="col-12 col-md-10 offset-md-1 main-content">
+    <div class="row justify-content-center">
+        <main class="col-12 col-md-10 main-content">
             <h2 class="d-block d-md-none">Contact Us</h2>
             
             <form id="contact_form" action="send.php" method="post" class="p-5 mt-5 contact-form">
@@ -38,6 +38,7 @@ include 'templates/navigation.php';
                 </div>
                 
                 <input type="submit" class="btn btn-primary text-uppercase" name="submit" value="Submit"> 
+                <div id="output" class="alert alert-success text-center mt-3 d-none"></div>
             </form>
             
         </main>

@@ -1,5 +1,24 @@
 $(document).ready(function() {
+    // Fixed Menu
+    var mainNavHeight = $('.navigation').innerHeight();
+    var mainNavOffset = $('.navigation').offset();
+    var realDistance = mainNavOffset.top + mainNavHeight;
+    
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll > realDistance) {
+            $('.navigation').addClass('fixed-top').removeClass('mt-4');
+            $('body').css({ 'margin-top': mainNavHeight + 'px'});
+        } else {
+            $('.navigation').removeClass('fixed-top').addClass('mt-4');
+            $('body').css({ 'margin-top': '0'});
+        }
+    });
+    
+    // Contact Form
     $('#contact_form').on('submit', function(event) {
+        event.preventDefault();
+        
         var errors = [];
         
         // Name
@@ -54,10 +73,10 @@ $(document).ready(function() {
                 url: contact_form.attr('action'),
                 data: contact_form.serialize()
             }).done(function(data) {
-                
+                var response = JSON.parse(data);
+                $('#output').append(response.message).removeClass('d-none').fadeIn();
             });
         }
         
-        event.preventDefault();
     });
 });
